@@ -2,7 +2,10 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 console.log(galleryItems);
+
 const galleryListEl = document.querySelector(".gallery");
+
+galleryListEl.innerHTML = createGalleryListMarkup(galleryItems);
 
 function createGalleryListMarkup(galleryItems) {
   return galleryItems
@@ -20,3 +23,10 @@ function createGalleryListMarkup(galleryItems) {
     )
     .join("");
 }
+const simpleLightBoxGallery = new SimpleLightbox(
+  ".gallery .gallery__item .gallery__link",
+  {
+    captionsData: "alt",
+    captionDelay: 250,
+  }
+);
